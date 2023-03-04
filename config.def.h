@@ -90,6 +90,9 @@ static const Key keys[] = {
     { 0,                            XF86XK_AudioPlay,  spawn,   SHCMD("playerctl play-pause")},
     { 0,                            XF86XK_AudioNext,  spawn,   SHCMD("playerctl next")},
     { 0,                            XF86XK_AudioPrev,  spawn,   SHCMD("playerctl previous")},
+    { 0,                            XF86XK_AudioLowerVolume,  spawn,   SHCMD("amixer -c 2 sset Master 5-")},
+    { 0,                            XF86XK_AudioRaiseVolume,  spawn,   SHCMD("amixer -c 2 sset Master 5+")},
+    { 0,                            XF86XK_AudioMute,  spawn,   SHCMD("amixer -c 2 sset Master toggle")},
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
