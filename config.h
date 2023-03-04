@@ -1,4 +1,5 @@
 /* See LICENSE file for copyright and license details. */
+#include <X11/XF86keysym.h>
 
 /* appearance */
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
@@ -86,6 +87,9 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
     { 0,                            XK_Print,  spawn,          SHCMD("flameshot gui")},
+    { 0,                            XF86XK_AudioPlay,  spawn,   SHCMD("playerctl play-pause")},
+    { 0,                            XF86XK_AudioNext,  spawn,   SHCMD("playerctl next")},
+    { 0,                            XF86XK_AudioPrev,  spawn,   SHCMD("playerctl previous")},
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
