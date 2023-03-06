@@ -96,6 +96,7 @@ static const Key keys[] = {
     { 0,                            XF86XK_AudioLowerVolume,  spawn,   SHCMD("amixer -c 2 sset Master 5-")},
     { 0,                            XF86XK_AudioRaiseVolume,  spawn,   SHCMD("amixer -c 2 sset Master 5+")},
     { 0,                            XF86XK_AudioMute,  spawn,   SHCMD("amixer -c 2 sset Master toggle")},
+    { MODKEY|ShiftMask,             XK_l,      spawn,          SHCMD("betterlockscreen -l blur")},
 	TAGKEYS(                        XK_1,                      0)
 	TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
