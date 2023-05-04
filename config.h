@@ -96,8 +96,8 @@ static const Key keys[] = {
     { 0,                            XF86XK_AudioPlay,  spawn,   SHCMD("playerctl play-pause")},
     { 0,                            XF86XK_AudioNext,  spawn,   SHCMD("playerctl next")},
     { 0,                            XF86XK_AudioPrev,  spawn,   SHCMD("playerctl previous")},
-    { 0,                            XF86XK_AudioLowerVolume,  spawn,   SHCMD("amixer -c 2 sset Master 5-")},
-    { 0,                            XF86XK_AudioRaiseVolume,  spawn,   SHCMD("amixer -c 2 sset Master 5+")},
+    { 0,                            XF86XK_AudioLowerVolume,  spawn,   SHCMD("pactl set-sink-volume $(pactl list sinks | awk '/Sink #/ {print $NF; getline; print}' | awk '{print substr($0, 2)}' | awk '/State: RUNNING/ {print prev}; {prev=$0}') -10%")},
+    { 0,                            XF86XK_AudioRaiseVolume,  spawn,   SHCMD("pactl set-sink-volume $(pactl list sinks | awk '/Sink #/ {print $NF; getline; print}' | awk '{print substr($0, 2)}' | awk '/State: RUNNING/ {print prev}; {prev=$0}') +10%")},
     { 0,                            XF86XK_AudioMute,  spawn,   SHCMD("amixer -c 2 sset Master toggle")},
     { MODKEY|ShiftMask,             XK_l,      spawn,          SHCMD("betterlockscreen -l")},
 	TAGKEYS(                        XK_1,                      0)
