@@ -98,10 +98,13 @@ static const Key keys[] = {
     {MODKEY, XK_period, focusmon, {.i = +1}},
     {MODKEY | ShiftMask, XK_comma, tagmon, {.i = -1}},
     {MODKEY | ShiftMask, XK_period, tagmon, {.i = +1}},
+    // Screenshot
     {0, XK_Print, spawn, SHCMD("flameshot gui")},
+    // Player control
     {0, XF86XK_AudioPlay, spawn, SHCMD("playerctl play-pause")},
     {0, XF86XK_AudioNext, spawn, SHCMD("playerctl next")},
     {0, XF86XK_AudioPrev, spawn, SHCMD("playerctl previous")},
+    // Increase And decrease volume
     {0, XF86XK_AudioLowerVolume, spawn,
      SHCMD("pactl set-sink-volume $(pactl list sinks | awk '/Sink #/ {print "
            "$NF; getline; print}' | awk '{print substr($0, 2)}' | awk '/State: "
@@ -110,8 +113,11 @@ static const Key keys[] = {
      SHCMD("pactl set-sink-volume $(pactl list sinks | awk '/Sink #/ {print "
            "$NF; getline; print}' | awk '{print substr($0, 2)}' | awk '/State: "
            "RUNNING/ {print prev}; {prev=$0}') +10%")},
+    // Mute volume
     {0, XF86XK_AudioMute, spawn, SHCMD("amixer -c 2 sset Master toggle")},
+    // Locking the screen
     {MODKEY | ShiftMask, XK_l, spawn, SHCMD("betterlockscreen -l")},
+    // Mapping the tags to number
     TAGKEYS(XK_1, 0) TAGKEYS(XK_2, 1) TAGKEYS(XK_3, 2) TAGKEYS(XK_4, 3)
         TAGKEYS(XK_5, 4) TAGKEYS(XK_6, 5) TAGKEYS(XK_7, 6) TAGKEYS(XK_8, 7)
             TAGKEYS(XK_9, 8){MODKEY | ShiftMask, XK_q, quit, {0}},
