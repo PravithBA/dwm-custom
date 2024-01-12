@@ -30,6 +30,7 @@ static const Rule rules[] = {
      */
     /* class      instance    title       tags mask     isfloating   monitor */
     {"Firefox", NULL, NULL, 2, 0, -1},
+    {"firefox", NULL, NULL, 2, 0, -1},
     {"Slack", NULL, NULL, 3, 0, -1},
 };
 
@@ -43,9 +44,9 @@ static const int lockfullscreen =
 
 static const Layout layouts[] = {
     /* symbol     arrange function */
-    {"[]=", tile}, /* first entry is default */
-    {"><>", NULL}, /* no layout function means floating behavior */
-    {"[M]", monocle},
+    {"Tiled Layout", tile}, /* first entry is default */
+    {"Floating Layout", NULL}, /* no layout function means floating behavior */
+    {"Monacle Layout", monocle},
 };
 
 /* key definitions */
