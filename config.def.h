@@ -106,11 +106,11 @@ static const Key keys[] = {
     {0, XF86XK_AudioNext, spawn, SHCMD("playerctl next")},
     {0, XF86XK_AudioPrev, spawn, SHCMD("playerctl previous")},
     // Increase And decrease volume
-    {0, XF86XK_AudioLowerVolume, spawn,
+    {MODKEY, XK_v, spawn,
      SHCMD("pactl set-sink-volume $(pactl list sinks | awk '/Sink #/ {print "
            "$NF; getline; print}' | awk '{print substr($0, 2)}' | awk '/State: "
            "RUNNING/ {print prev}; {prev=$0}') -10%")},
-    {0, XF86XK_AudioRaiseVolume, spawn,
+    {MODKEY | ShiftMask, XK_v, spawn,
      SHCMD("pactl set-sink-volume $(pactl list sinks | awk '/Sink #/ {print "
            "$NF; getline; print}' | awk '{print substr($0, 2)}' | awk '/State: "
            "RUNNING/ {print prev}; {prev=$0}') +10%")},
