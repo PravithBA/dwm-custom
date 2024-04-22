@@ -44,7 +44,7 @@ static const int lockfullscreen =
 
 static const Layout layouts[] = {
     /* symbol     arrange function */
-    {"Tiled Layout", tile}, /* first entry is default */
+    {"Tiled Layout", tile},    /* first entry is default */
     {"Floating Layout", NULL}, /* no layout function means floating behavior */
     {"Monacle Layout", monocle},
 };
@@ -100,7 +100,7 @@ static const Key keys[] = {
     {MODKEY | ShiftMask, XK_comma, tagmon, {.i = -1}},
     {MODKEY | ShiftMask, XK_period, tagmon, {.i = +1}},
     // Screenshot
-    {0, XK_Print, spawn, SHCMD("flameshot gui")},
+    {MODKEY, XK_c, spawn, SHCMD("flameshot gui")},
     // Player control
     {0, XF86XK_AudioPlay, spawn, SHCMD("playerctl play-pause")},
     {0, XF86XK_AudioNext, spawn, SHCMD("playerctl next")},
